@@ -22,7 +22,8 @@ def run(name, args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("component", required=True)
+    parser.add_argument("component")
     args, rest = parser.parse_known_args()
 
+    sys.argv = sys.argv[:1]
     run(args.component, rest)

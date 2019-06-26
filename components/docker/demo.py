@@ -3,6 +3,7 @@ from __future__ import absolute_import, print_function
 
 from suanpan.docker import DockerComponent as dc
 from suanpan.docker.arguments import Folder
+import utils
 
 
 # 定义输入
@@ -16,6 +17,11 @@ def Demo(context):
     print(args.inputData1)
 
     # 自定义代码
+    utils.hello()
 
     # 将 args.outputData1 作为输出发送给下一节点
     return args.outputData1
+
+
+if __name__ == "__main__":
+    Demo()

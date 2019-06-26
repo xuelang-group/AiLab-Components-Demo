@@ -1,3 +1,3 @@
 #!/bin/bash
 
-pyarmor obfuscate --recursive main.py
+pyarmor obfuscate --recursive run.py

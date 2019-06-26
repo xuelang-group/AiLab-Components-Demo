@@ -16,13 +16,13 @@ def load(name):
         raise e
 
 
-def run(name):
-    return load(name)()
+def run(name, args):
+    return load(name)(*args)
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("Run")
-    args = parser.parse_args()
+    parser.add_argument("component")
+    args, rest = parser.parse_known_args()
 
-    run(args.component)
+    run(args.component, rest)

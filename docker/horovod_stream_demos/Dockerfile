@@ -20,7 +20,15 @@ FROM registry-vpc.cn-shanghai.aliyuncs.com/shuzhi/horovod_stream_base:${PYTHON_V
 
 WORKDIR /demos
 
+ENV PYPI_MIRROR "https://mirrors.aliyun.com/pypi/simple"
+
+RUN pip config set global.index-url ${PYPI_MIRROR}
+
+RUN pip install --upgrade pip
+
 COPY --from=builder /build/dist /demos
+
+RUN pip install -r requirements.txt
 
 ENTRYPOINT [ "/sbin/my_init", "--" ]
 

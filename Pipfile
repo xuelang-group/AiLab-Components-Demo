@@ -9,6 +9,7 @@ black = "*"
 pylint = "*"
 
 [packages]
+suanpan = {extras = ["docker"],path = "./../../AiLab"}
 
 [requires]
 python_version = "3.7"

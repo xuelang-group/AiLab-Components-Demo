@@ -1,6 +1,7 @@
 # coding=utf-8
 from __future__ import absolute_import, print_function
 
+import suanpan
 from suanpan.docker import DockerComponent as dc
 from suanpan.docker.arguments import Folder
 import utils
@@ -24,4 +25,4 @@ def Demo(context):
 
 
 if __name__ == "__main__":
-    Demo()
+    suanpan.run(Demo)

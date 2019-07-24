@@ -1,6 +1,7 @@
 # coding=utf-8
 from __future__ import absolute_import, print_function
 
+import suanpan
 from suanpan.stream import Handler as h
 from suanpan.stream import Stream
 from suanpan.stream.arguments import String
@@ -13,4 +14,4 @@ class DemoIn1Out1(Stream):
 
 
 if __name__ == "__main__":
-    DemoIn1Out1().start()
+    suanpan.run(DemoIn1Out1)

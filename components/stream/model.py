@@ -5,6 +5,7 @@ import os
 
 from sklearn.externals import joblib
 
+import suanpan
 from suanpan.model import Model
 from suanpan.stream import Handler as h
 from suanpan.stream import Stream
@@ -26,7 +27,9 @@ class ModelStreamDemo(Stream):
     ]
 
     def afterInit(self):  # 初始化模型
-        self.model = ModelDemo(self.args.model1, version="latest")
+        self.model = ModelDemo()
+        self.model.setLoader(storagePath=self.args.model1, version="latest")
+        self.model.load(self.model.path)
 
     def afterCall(self):  # 在每一次call()之后，检查是否有新的模型版本， 有的话会自动下载相应版本模型文件夹
         self.model.reload(self.args.duration)
@@ -49,4 +52,4 @@ class ModelStreamDemo(Stream):
 
 
 if __name__ == "__main__":
-    ModelStreamDemo().start()
+    suanpan.run(ModelStreamDemo)

@@ -26,11 +26,11 @@ RUN pip config set global.index-url ${PYPI_MIRROR}
 
 RUN pip install --upgrade pip
 
-COPY --from=builder /build/dist /demos
-
 COPY requirements.txt /demos
 
 RUN pip install -r requirements.txt
+
+COPY --from=builder /build/dist /demos
 
 ENTRYPOINT [ "/sbin/my_init", "--" ]
 

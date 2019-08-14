@@ -28,6 +28,8 @@ RUN pip install --upgrade pip
 
 COPY --from=builder /build/dist /demos
 
+COPY requirements.txt /demos
+
 RUN pip install -r requirements.txt
 
 ENTRYPOINT [ "/sbin/my_init", "--" ]

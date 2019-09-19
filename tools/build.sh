@@ -2,6 +2,7 @@
 
 set -e
 
-VERSION=1.0.0
+VERSION=`python tools/version.py get`
 
-. docker/build.sh $VERSION $@
+echo "Build Version: ${VERSION}"
+. docker/build.sh ${VERSION} $@

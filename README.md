@@ -1,4 +1,4 @@
-# AiLab-Components-Demo
+# my-comopnents
 
 ## Install Requirements
 
@@ -9,17 +9,19 @@ pip install -r requirements.txt
 ## Run
 
 ``` bash
-python run.py components.docker.demo.Demo
-```
-
-``` bash
-python run.py components.stream.demo.Demo
+python run.py components.hello_world.app
 ```
 
 ## Build
 
 ``` bash
-bash tools.build.sh
+bash tools/build.sh
+```
+
+## Upgrade
+
+``` bash
+bash tools/upgrade.sh
 ```
 
 ## Tips

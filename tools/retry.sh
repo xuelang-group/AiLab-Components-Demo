@@ -16,6 +16,12 @@ function retry()
             echo "Retry $n: $cmd"
             }
     done
+
+    if [[ $n -ge $try ]]
+    then
+        echo "Run failed: $cmd"
+        return 1
+    fi
 }
 
 retry $@

@@ -1,6 +1,6 @@
 ARG PYTHON_VERSION=3.6
 
-FROM registry-vpc.cn-shanghai.aliyuncs.com/shuzhi/horovod_stream_base:${PYTHON_VERSION} as builder
+FROM registry-vpc.cn-shanghai.aliyuncs.com/shuzhi/suanpan-python-sdk:${PYTHON_VERSION} as builder
 
 ENV PYPI_MIRROR "https://mirrors.aliyun.com/pypi/simple"
 
@@ -16,7 +16,7 @@ COPY . /build
 
 RUN bash tools/compress.sh
 
-FROM registry-vpc.cn-shanghai.aliyuncs.com/shuzhi/horovod_stream_base:${PYTHON_VERSION}
+FROM registry-vpc.cn-shanghai.aliyuncs.com/shuzhi/suanpan-python-sdk:${PYTHON_VERSION}
 
 WORKDIR /demos
 

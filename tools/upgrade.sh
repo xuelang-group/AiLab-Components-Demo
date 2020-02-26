@@ -24,4 +24,4 @@ esac
 UPGRADE_VERSION="${MAJOR}.${MINOR}.${MICRO}"
 
 . tools/publish.sh ${CURRENT_VERSION} ${UPGRADE_VERSION}
-. tools/jenkins.sh || echo "Jenkins configs error: tools/jenkins.sh"
+. tools/jenkins.sh

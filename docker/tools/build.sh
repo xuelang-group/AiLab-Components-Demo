@@ -1,7 +1,7 @@
 #!/bin/bash
 
 REGISTRY="registry-vpc.cn-shanghai.aliyuncs.com"
-NAMESPACE="shuzhi"
+NAMESPACE="shuzhi-amd64"
 IMAGE_URL="${REGISTRY}/${NAMESPACE}/$1"
 IMAGE_VERSION="$3"
 

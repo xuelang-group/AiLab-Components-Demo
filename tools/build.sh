@@ -8,7 +8,7 @@ IMAGE_NAME=$1
 IMAGE_URL="${REGISTRY}/${NAMESPACE}/${IMAGE_NAME}"
 PYTHON_VERSION="3.7"
 
-. tools/retry.sh 3 docker build \
+docker build \
 -t ${IMAGE_URL}:latest \
 . \
 -f ./docker/Dockerfile \

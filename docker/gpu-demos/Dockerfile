@@ -1,6 +1,6 @@
 ARG PYTHON_VERSION=3.6
 
-FROM registry-vpc.cn-shanghai.aliyuncs.com/shuzhi/docker_base:${PYTHON_VERSION} as builder
+FROM registry-vpc.cn-shanghai.aliyuncs.com/shuzhi-amd64/suanpan-python-sdk-horovod:${PYTHON_VERSION} as builder
 
 ENV PYPI_MIRROR "https://mirrors.aliyun.com/pypi/simple"
 
@@ -16,7 +16,7 @@ COPY . /build
 
 RUN bash tools/compress.sh
 
-FROM registry-vpc.cn-shanghai.aliyuncs.com/shuzhi/docker_base:${PYTHON_VERSION}
+FROM registry-vpc.cn-shanghai.aliyuncs.com/shuzhi-amd64/suanpan-python-sdk-horovod:${PYTHON_VERSION}
 
 WORKDIR /demos
 
@@ -28,7 +28,7 @@ RUN pip install --upgrade pip
 
 COPY requirements.txt /demos
 
-RUN pip install -r requirements.txt
+RUN pip install  --no-cache-dir -r requirements.txt
 
 COPY --from=builder /build/dist /demos
 

@@ -6,5 +6,5 @@ $IMAGE_NAME = $args
 $IMAGE_URL = "${REGISTRY}/${NAMESPACE}/${IMAGE_NAME}"
 $PYTHON_VERSION = "3.7"
 
-docker build -t ${IMAGE_URL}:latest . -f .\docker\Dockerfile --build-arg PYTHON_VERSION=3.7 
+docker build -t ${IMAGE_URL}:latest . -f .\docker\Dockerfile
 docker push ${IMAGE_URL}:latest

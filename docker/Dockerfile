@@ -1,4 +1,4 @@
-ARG PYTHON_VERSION=3.6
+ARG PYTHON_VERSION=3.7
 
 FROM registry.cn-shanghai.aliyuncs.com/shuzhi-amd64/suanpan-python-sdk:${PYTHON_VERSION} as builder
 

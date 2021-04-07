@@ -18,12 +18,6 @@ python run.py components.hello_world.app
 bash tools/build.sh
 ```
 
-## Upgrade
-
-``` bash
-bash tools/upgrade.sh
-```
-
 ## Tips
 
 Demo 中包含

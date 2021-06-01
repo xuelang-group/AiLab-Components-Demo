@@ -2,7 +2,7 @@
 
 ARCH="amd64"
 
-REGISTRY="registry-vpc.cn-shanghai.aliyuncs.com"
+REGISTRY="registry.cn-shanghai.aliyuncs.com"
 NAMESPACE="shuzhi-${ARCH}"
 IMAGE_URL="${REGISTRY}/${NAMESPACE}/$1"
 IMAGE_VERSION="$3"
